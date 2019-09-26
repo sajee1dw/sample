@@ -1,0 +1,51 @@
+.background {
+    background-image:url('/assets/img/c.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+    color: white;}
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    ul{
+      margin-bottom: 50px;
+      
+    }
+    ul a{
+      font-size: 29px;
+      color: white;
+    }
+    ul a:hover{
+      text-decoration:none;
+      color: gray;
+    }
+    .label{
+      font-size: 19px;
+      color: white;
+      font-weight: normal;
+      margin-left:10px;
+    }
+    .form-control{
+      background: transparent;
+      border-radius: 0px;
+      border: 0px;
+      border-bottom: 1px solid #f44c89;
+      margin-bottom:30px;
+      font-size: 22px;
+      color: white;
+      padding: 15px;
+    }
+    .btn-info{
+      background: #f44c89;
+      border: 2px solid #f44c89;
+      border-radius: 0px;
+      width:250px;
+      margin-top:20px;
+      margin-left:100px;
+      font-size:20px;
+      background: transparent;
+    }
+    .btn-info:hover{
+      background:#f44c89;
+      border:2px solid #f44c89; 
+    }

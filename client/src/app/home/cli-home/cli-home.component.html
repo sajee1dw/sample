@@ -1,0 +1,276 @@
+<app-cli-appbar></app-cli-appbar>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h3><b>Web developers</b></h3>
+
+<div *ngFor="let skill of webDeveloper">
+    
+        <div class="col-md-6 mx-left">
+            <img src="http://localhost:3000/{{ skill?.user?.image.image_name }}" 
+            alt="http://localhost:3000/{{ skill?.user?.image.image_name }}" width="10%" heigt="10%">
+          <table>
+              <tr>
+                  <td>{{ skill?.user.first_name }} {{ skill?.user.last_name }}</td>
+                </tr>
+            <tr>
+              <td>Skills: {{ skill?.web_skill }}</td> 
+            </tr>
+            <tr>
+                <td *ngIf="skill?.user.rating === 5"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 4"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star  checked"></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 3"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 2"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 1"> 
+                    <span class="fa fa-star checked "></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 0"> 
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+              </tr>
+            <tr>
+            <td><button (click)="viewDeveloper( skill.id, skill.user_ID, 1 )">
+              View more
+            </button></td>
+          </tr>
+          
+          </table><br><br>
+        </div>
+        
+</div>
+
+<h3><b>Designers</b></h3>
+
+    <div *ngFor="let skill of designer">
+        
+            <div class="col-md-6 mx-left">
+                <img src="http://localhost:3000/{{ skill?.user?.image.image_name }}" 
+            alt="http://localhost:3000/{{ skill?.user?.image.image_name }}" width="10%" heigt="10%">
+              <table>
+                <tr>
+                  <td>{{ skill?.user.first_name }} {{ skill?.user.last_name }}</td>
+                </tr>
+                <tr>
+                  <td>Skills: {{ skill?.design_skill }}</td></tr>
+                  <tr>
+                      <td *ngIf="skill?.user.rating === 5"> 
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                      </td>
+                      <td *ngIf="skill?.user.rating === 4"> 
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td *ngIf="skill?.user.rating === 3"> 
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td *ngIf="skill?.user.rating === 2"> 
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td *ngIf="skill?.user.rating === 1"> 
+                          <span class="fa fa-star checked "></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td *ngIf="skill?.user.rating === 0"> 
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                    </tr>
+                  <tr> 
+                <td><button (click)="viewDeveloper( skill.id, skill.user_ID, 2 )">
+                  View more
+                </button></td>
+              </tr>
+             
+              </table><br><br>
+            </div>
+            
+    </div>
+
+<h3><b>Writers</b></h3>
+
+    <div *ngFor="let skill of writer">
+            
+        <div class="col-md-6 mx-left">
+            <img src="http://localhost:3000/{{ skill?.user?.image.image_name }}" 
+            alt="http://localhost:3000/{{ skill?.user?.image.image_name }}" width="10%" heigt="10%">
+             <table>
+            <tr>
+                <td>{{ skill?.user.first_name }} {{ skill?.user.last_name }}</td>
+            </tr>
+            <tr>
+                <td>Skills: {{ skill?.writing_skill }}</td> </tr>
+                <tr>
+                    <td *ngIf="skill?.user.rating === 5"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </td>
+                    <td *ngIf="skill?.user.rating === 4"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star  checked"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                    <td *ngIf="skill?.user.rating === 3"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                    <td *ngIf="skill?.user.rating === 2"> 
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                    <td *ngIf="skill?.user.rating === 1"> 
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                    <td *ngIf="skill?.user.rating === 0"> 
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                  </tr>
+
+              <tr>  
+            <td><button (click)="viewDeveloper( skill.id, skill.user_ID, 3 )">
+              View more
+             </button></td>
+          </tr>
+          </table><br><br>
+         </div>
+                
+    </div>
+
+
+<h3><b>Data enter</b></h3>
+
+ <div *ngFor="let skill of dataEnter">
+                
+     <div class="col-md-6 mx-left">
+        <img src="http://localhost:3000/{{ skill?.user?.image.image_name }}" 
+            alt="http://localhost:3000/{{ skill?.user?.image.image_name }}" width="10%" heigt="10%">
+         <table>
+         <tr>
+            <td>{{ skill?.user.first_name }} {{ skill?.user.last_name }}</td>
+          </tr>
+          <tr>
+            <td>Skills: {{ skill?.data_skill }}</td> </tr>
+            <tr>
+                <td *ngIf="true"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 4"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star  checked"></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 3"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 2"> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 1"> 
+                    <span class="fa fa-star checked "></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+                <td *ngIf="skill?.user.rating === 0"> 
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span>
+                </td>
+              </tr>
+
+            <tr>
+          <td><button (click)="viewDeveloper( skill.id, skill.user_ID, 4 )">
+            View more
+         </button></td>
+        </tr>
+        </table><br><br>
+       </div>
+                    
+ </div>

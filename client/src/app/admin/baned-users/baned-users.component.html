@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/admin">home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">competions</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/admin/add_ads">advertise</a>
+      </li>
+      
+    </ul>
+  </nav>
+
+<div class="container text-center">    
+    <br><br><br>
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>User Type</th>
+              <th>Email</th>
+              <th>Rating</th>
+              <th>Current status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let user of details">
+            <tr>
+              <td>{{ user?.first_name }} {{ user?.last_name }}</td>
+              <td>{{ user?.user_type }}</td>
+              <td>{{ user?.email }}</td>
+              <td>5</td>
+              <th *ngIf="user?.isActivated">Active </th><th *ngIf="!user?.isActivated">Baned</th>  
+              <th *ngIf="user?.isActivated"><button class="btn-act" (click)="banedUser(user.email)" >baned user</button ></th><th *ngIf="!user?.isActivated"><button class="btn-baned">Activate user</button>
+              </th>
+              
+            </tr>
+          </tbody>
+        </table>
+       
+      </div>
+
+
+    <div class="container text-center">    
+        <br><br><br>
+        <div class="row">
+          <div class="col-sm-12">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Name</th>
+                  <th>User Type</th>
+                  <th>Email</th>
+                  <th>Rating</th>
+                  <th>Current status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let user of detail">
+                <tr>
+                  <td>{{ user?.first_name }} {{ user?.last_name }}</td>
+                  <td>{{ user?.user_type }}</td>
+                  <td>{{ user?.email }}</td>
+                  <td>5</td>
+                  <th *ngIf="user?.isActivated">Active </th><th *ngIf="!user?.isActivated">Baned</th>  
+                  <th *ngIf="user?.isActivated"><button class="btn-act" (click)="banedUser(user.email)" >baned user</button ></th><th *ngIf="!user?.isActivated"><button class="btn-baned">Activate user</button>
+                  </th>
+                  
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>

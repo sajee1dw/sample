@@ -1,0 +1,47 @@
+
+<div class="background">
+    <div style="text-align: right;"><button class="btn-sign" routerLink="/">Sign in</button></div>
+    
+  <div class="container">
+    <div class="row" >
+        <div class="col-md-2"></div>
+    <div class="col-md-5">
+        <div class="row"  style="margin-top: 50px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+            <div class="col-md-12 ">
+             
+      <form (submit)="register()">
+        <h1 class="h3 mb-3 font-weight-normal" style="color:white;">Register</h1>
+        <div class="form-group">
+         <div class="label control-label">First name</div>
+          <input type="text" class="form-contro" name="first_name" placeholder="Enter your first name" [(ngModel)]="credentials.first_name">
+  
+          <div class="label control-label">Last name</div>
+          <input type="text" class="form-contro" name="last_name" placeholder="Enter your last name" [(ngModel)]="credentials.last_name">
+  
+          <div class="label control-label">Email address</div>
+          <input type="email" class="form-contro" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+  
+          <div class="label control-label">Password</div>
+          <input type="password" class="form-contro" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+  
+          <div class="label control-label">Confirm Password</div>
+          <input type="password" class="form-contro" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+
+          <div class="label control-label">Gender</div>
+          <input type="radio"  class="form-contro"  name="gender"  value="Male" [(ngModel)]="credentials.gender"> Male
+          <input type="radio"   class="form-contro" name="gender" value="Female" [(ngModel)]="credentials.gender"> Female
+  
+          <div class="label control-label">Contact number</div>
+          <input type="text" class="form-contro" name="contact_no" placeholder="07########" [(ngModel)]="credentials.contact_no">
+        </div>
+        <button type="submit" class="btn-reg">Register</button><br><br>
+        
+      </form>
+    
+      </div> </div></div>
+    
+    </div>
+  </div>
+  <br><br>
+  </div>
+  

@@ -1,0 +1,17 @@
+
+<ul class="down">
+     <li><img src="assets/img/logo.png" height="51px" width="100px"></li>
+     <li><a routerLink="/dev_home">Home</a></li>
+    <li><a  routerLink="/dev_profile">Profile</a></li>
+     <li><a routerLink="/dev_competition">Competitions</a></li>
+     <li><a routerLink="/confirmed_project">My Projects</a></li>
+     <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+     <li style="float:right"><a routerLink="/dev_home/notification" class="notification">
+               <span><img src="assets/img/bell.png" height="20px" width="20px"></span>
+               <span class="badge">{{ countRequestDeveloper + countAccProReq + countAccBidReq }}</span>
+             </a>
+     </li>
+     <li  style="float:right"><a routerLink="/chatInterface">Chat</a></li>
+</ul>
+
+

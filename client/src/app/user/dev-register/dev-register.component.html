@@ -1,0 +1,106 @@
+
+<div class="background">
+           
+            <div class="container">
+
+              <div class="row" >
+                  <div class="col-md-2"></div>
+              <div class="col-md-5">
+                  <div class="row"  style="margin-top: 50px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+                      <div class="col-md-12 ">
+                       
+                <form #userForm="ngForm" name="userForm" (submit)="register()">
+                  <ul>
+                    <a  routerLink="" >Sign in</a>
+                    <a style="border-bottom: 4px solid #f44c89;padding :10px;" >/ Sign up</a>
+                  </ul>
+                  <div class="form-group">
+                   <div class="label control-label">First name</div>
+                    <div class="form-contro"><input type="text" required #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" class="form-control " name="first_name" placeholder="Enter your first name" [(ngModel)]="credentials.first_name"></div>
+                   <div class="alert_msg" >
+                     <small class="text-danger" *ngIf="fname.invalid && fname.touched">Frist name is required</small>
+                   </div>
+                  
+                    <div class="label control-label">Last name</div>
+                    <div class="form-contro"><input type="text"  required #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" class="form-control" name="last_name" placeholder="Enter your last name" [(ngModel)]="credentials.last_name"></div>
+                    <div class="alert_msg" >
+                      <small class="text-danger" *ngIf="lname.invalid && lname.touched">Last name is required</small>
+                    </div>
+          
+                    </div><div class="label control-label">Email address</div>
+                    <div class="form-contro"> <input type="email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email"></div>
+                    <div class="alert_msg" >
+                      <small class="text-danger" *ngIf="email.invalid && email.touched">E-mail is required</small>
+                    </div>
+          
+                    <div class="label control-label">Password</div>
+                    <div class="form-contro"><input type="password" required #pword="ngModel" [class.is-invalid]="pword.invalid && pword.touched" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password"></div>
+                    <div class="alert_msg" >
+                      <small class="text-danger" *ngIf="pword.invalid && pword.touched">Password is required</small>
+                    </div>
+          
+                    <div class="label control-label" >Confirm Password</div>
+                    <div class="form-contro"><input type="password" required  class="form-control" name="cpassword" placeholder="Re-enter Password" [(ngModel)]="confirm_password"  (click)="onCheck()"></div>
+                    <div class="alert_msg" >
+                      <small class="text-danger" *ngIf="checkMatch()">Passwords are not match</small>
+                    </div>
+                   
+                    <div class="label control-label">Gender</div>
+                    <input type="radio"  class="btn-radio"  name="gender" value="Male" [(ngModel)]="credentials.gender"> Male
+                     <input type="radio"   class="btn-radio" name="gender" value="Female" [(ngModel)]="credentials.gender"> Female
+            
+                    <div class="label control-label">Contact number</div>
+                    <div class="form-contro"><input type="text" required #pnum="ngModel" pattern="^\d{10}$" [class.is-invalid]="pnum.invalid && pnum.touched" class="form-control" name="contact_no" placeholder="07########" [(ngModel)]="credentials.contact_no"></div>
+                    <div *ngIf="pnum.errors && (pnum.invalid && pnum.touched)">
+                        <div class="alert_msg" >
+                       <small *ngIf="pnum.errors.required" class="text-danger">Contact number is required</small>
+                       <small *ngIf="pnum.errors.pattern" class="text-danger">contact number must be 10 digits</small>
+                        </div>
+                    </div>
+          
+                  <button *ngIf="!userForm.form.invalid" type="submit" [disabled]="userForm.form.invalid" class="btn-reg">Register</button>
+                  <button *ngIf="userForm.form.invalid" type="submit" [disabled]="userForm.form.invalid" class="btn-reg-disable">Register</button><br><br>
+                 
+                </form>
+              
+                </div> </div></div>
+              
+              </div>
+            </div>
+       
+  </div>
+
+
+
+
+  <div class="background">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-5">
+            <div class="row" style="margin-top: 100px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+              <div class="col-md-12 ">
+              
+                <ul>
+                  <a  routerLink="" >Sign in</a>
+                  <a routerLink="/userType"style="border-bottom: 4px solid #f44c89;padding 10px;" >/ Sign up</a>
+                </ul>
+               
+                <div class="picMargin">
+                    <div style="position: relative; left: 0; top: 0;">
+                      <img src="assets/img/profile2.png" width="80%" height="80%" class="img1" />
+                      <label><img src="assets/img/cam2.png" width="35%" height="35%" class="img2" />
+                        <input type="file">
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-6"></div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+          
+        </div>
+      </div>
+  

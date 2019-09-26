@@ -1,0 +1,61 @@
+
+
+<div class="background">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-20 mt-5 mx-left">
+                <h3>What skills that you have?</h3>
+                <br><br>
+                <form (submit)= "Skill()">
+    
+                <input type="checkbox" name="web" (change)="toggleVisibility1($event)">Web development,IT & Software Skills
+                <div style="margin-left:30%;" *ngIf="marked1">
+                <input type="checkbox" name="web_skill1" value="HTML" [(ngModel)]="credentials.web_skill1"> HTML <br>
+                <input type="checkbox" name="web_skill2" [(ngModel)]="credentials.web_skill2"> PHP  <br>
+                <input type="checkbox" name="web_skill3" [(ngModel)]="credentials.web_skill3"> javascript <br>
+                <input type="checkbox" name="web_skill4" [(ngModel)]="credentials.web_skill4"> Angular <br>
+                <input type="checkbox" name="web_skill5" [(ngModel)]="credentials.web_skill5"> nodejs <br>
+                <input type="checkbox" name="web_skill6" [(ngModel)]="credentials.web_skill6"> Java  <br>
+                </div>
+                <br><br>
+                <input type="checkbox" name="design" (change)="toggleVisibility2($event)">Designing , Photo editing and Video editing
+                <div style="margin-left:30%;" *ngIf="marked2">
+                <input type="checkbox" name="design_skill1" [(ngModel)]="credentials.design_skill1"> Photoshop <br>
+                <input type="checkbox" name="design_skill2" [(ngModel)]="credentials.design_skill2"> Illustrator  <br>
+                <input type="checkbox" name="design_skill3" [(ngModel)]="credentials.design_skill3"> 3DMax <br>
+                <input type="checkbox" name="design_skill4" [(ngModel)]="credentials.design_skill4"> Maya <br>
+                <input type="checkbox" name="design_skill5" [(ngModel)]="credentials.design_skill5"> Coreldraw <br>
+                <input type="checkbox" name="design_skill6" [(ngModel)]="credentials.design_skill6"> AfterEffect  <br>
+                </div>
+                <br><br>
+                <input type="checkbox" name="writing" (change)="toggleVisibility3($event)">Content writing
+                <div style="margin-left:30%;" *ngIf="marked3">
+                <input type="checkbox" name="writing_skill1" [(ngModel)]="credentials.writing_skill1"> English <br>
+                <input type="checkbox" name="writing_skill2" [(ngModel)]="credentials.writing_skill2"> Tamil  <br>
+                <input type="checkbox" name="writing_skill3" [(ngModel)]="credentials.writing_skill3"> Sinhala <br>
+                <input type="checkbox" name="writing_skill4" [(ngModel)]="credentials.writing_skill4"> Spanish <br>
+                <input type="checkbox" name="writing_skill5" [(ngModel)]="credentials.writing_skill5"> Korean <br>
+                <input type="checkbox" name="writing_skill6" [(ngModel)]="credentials.writing_skill6"> Japaneese  <br>
+                </div>
+                <br><br>
+                <input type="checkbox" name="data" (change)="toggleVisibility4($event)">Data Entry
+                <div style="margin-left:30%;" *ngIf="marked4">
+                <input type="checkbox"  name="data_skill1" [(ngModel)]="credentials.data_skill1"> Excel <br>
+                <input type="checkbox"  name="data_skill2" [(ngModel)]="credentials.data_skill2"> Mysql  <br>
+                <input type="checkbox"  name="data_skill3" [(ngModel)]="credentials.data_skill3"> MongoDB <br>
+                <input type="checkbox"  name="data_skill4" [(ngModel)]="credentials.data_skill4"> MicrosoftSQL <br>
+                </div>
+                <br><br>
+    
+                Brief description about your other skills<br>
+                <textarea rows="8" cols="50" name="other_skill" [(ngModel)]="credentials.other_skill"></textarea>
+    
+                <br><br><br><br><button type="submit" class="btn btn-lg btn-primary btn-block">Confirm</button>
+                <br><br>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+            
+    

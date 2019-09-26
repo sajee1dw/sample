@@ -1,0 +1,35 @@
+<!--<form (submit)="AddCompetition()">
+<label>Competition Name</label>
+<input type="text"name="competition_name"[(ngModel)]="credentials.competition_name">
+<label>Winning Price</label>
+<input type="text" name="winning_price"[(ngModel)]="credentials.winning_price">
+<button type="Submit">Submit</button>
+</form>-->
+
+<div clas="container" style="margin-left: 12%; margin-right: 12%">
+<div class="row">
+    <div>
+        <button (click)="previous()">
+        <</button> 
+    </div> 
+    <div class="col" style="width:5vw; height:5vh">
+            <img src="{{ HEROES[index1].name }}" style="width:5vw; height: 5vh;">
+        </div>
+    <div class="col" style="width:10vw; height:10vh">
+        <img src="{{ HEROES[index2].name }}" style="width:10vw; height: 10vh;">
+    </div>
+    <div class="col" style="width:20vw; height: 20vh;">
+            <img src="{{ HEROES[index3].name }}" style="width:20vw; height: 20vh;">
+    </div>
+    <div class="col" style="width:10vw; height: 10vh;">
+            <img src="{{ HEROES[index4].name }}" style="width:10vw; height: 10vh;">
+    </div>
+    <div class="col" style="width:5vw; height: 5vh;">
+            <img src="{{ HEROES[index5].name }}" style="width:5vw; height: 5vh;">
+    </div>
+    <div>
+            <button (click)="next()">
+        ></button> 
+    </div>
+</div>
+</div>

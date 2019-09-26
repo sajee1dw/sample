@@ -1,0 +1,44 @@
+
+
+<app-cli-appbar></app-cli-appbar>
+
+<div class="col-md-6 mx-auto">
+<form  (submit)="Upload()" method="POST">
+    <img src="{{ fileUrl?.fileUrl }}" alt="{{ fileUrl?.fileUrl }}" width="20%" height="20%"><br>
+    <input type="file" name="profile_image" accept="image/*" (change)="onFileSelected($event)">
+    <button type="submit" >Upload</button>
+  </form>
+</div>
+
+<div *ngIf="marked1">
+    <div class="col-md-6 mx-auto">
+      <h1 class="text-center">PROFILE</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tr>
+        <td>Fist Name</td>
+        <td>{{ details?.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ details?.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ details?.email }}</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>{{ details?.gender }}</td>
+      </tr>
+      <tr>
+        <td>contact number</td>
+        <td>{{ details?.contact_no }}</td>
+      </tr>
+    </table>
+
+    <div style="text-align: center"><button (click)="showEditProf()" class="btn btn-lg btn-primary">Edit public details</button></div>
+
+</div>
+
+<app-cli-edit-profile *ngIf="marked2"></app-cli-edit-profile>

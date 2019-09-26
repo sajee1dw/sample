@@ -1,0 +1,84 @@
+<ul>
+    <li><img src="assets/img/logo.png" width="20%"  ></li>
+</ul>
+
+
+<ul>
+    <li><a routerLink="/dev_home">&lt;&lt;&lt;</a></li>
+    <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+
+<div *ngIf="marked1"><h3><b>New</b></h3><br>
+
+<div *ngFor="let reqNot of requestNotificationNew">
+    <button (click)="viewClientRequest(reqNot.id)">
+  <h4><b>Request from a client</b></h4>
+  <img src="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Client Name: {{ reqNot?.user?.first_name }} {{ reqNot?.user?.last_name }}<br>
+  Project Name: {{ reqNot?.project.project_name }}<br><br>
+  </button>
+</div>
+
+
+<div *ngFor="let reqNot of accProReqNew">
+  <button (click)="viewAccProReq(reqNot.id)">
+<h4><b>Accept project request</b></h4>
+<img src="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" 
+alt="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+Client Name: {{ reqNot?.project?.user?.first_name }} {{ reqNot?.project?.user?.last_name }}<br>
+Project Name: {{ reqNot?.project.project_name }}<br><br>
+</button>
+</div>
+
+
+<div *ngFor="let reqNot of accBidReqNew">
+  <button (click)="viewAccBidReq(reqNot.id)">
+<h4><b>Accept project request</b></h4>
+<img src="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" 
+alt="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+Client Name: {{ reqNot?.project?.user?.first_name }} {{ reqNot?.project?.user?.last_name }}<br>
+Project Name: {{ reqNot?.project.project_name }}<br><br>
+</button>
+</div>
+
+</div>
+
+
+
+<br><br>
+<div *ngIf="marked2"><h3><b>Earlier</b></h3><br>
+
+<div *ngFor="let reqNot of requestNotificationOld">
+    <button (click)="viewClientRequest(reqNot.id)">
+  <h4><b>Request from a client</b></h4>
+  <img src="http://localhost:3000//{{ reqNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Client Name: {{ reqNot?.user?.first_name }} {{ reqNot?.user?.last_name }}<br>
+  Project Name: {{ reqNot?.project.project_name }}<br><br>
+  </button>
+</div>
+
+<div *ngFor="let reqNot of accProReqOld">
+  <button (click)="viewAccProReq(reqNot.id)">
+<h4><b>Accept project request</b></h4>
+<img src="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" 
+alt="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+Client Name: {{ reqNot?.project?.user?.first_name }} {{ reqNot?.project?.user?.last_name }}<br>
+Project Name: {{ reqNot?.project.project_name }}<br><br>
+</button>
+</div>
+
+
+<div *ngFor="let reqNot of accBidReqOld">
+  <button (click)="viewAccBidReq(reqNot.id)">
+<h4><b>Accept project request</b></h4>
+<img src="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" 
+alt="http://localhost:3000/{{ reqNot?.project?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+Client Name: {{ reqNot?.project?.user?.first_name }} {{ reqNot?.project?.user?.last_name }}<br>
+Project Name: {{ reqNot?.project.project_name }}<br><br>
+</button>
+</div>
+
+</div>

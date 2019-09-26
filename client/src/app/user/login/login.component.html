@@ -1,0 +1,30 @@
+<div class="background">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <div class="row" style="margin-top: 100px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+            <div class="col-md-12">
+              <ul>
+                <a href="#" style="border-bottom: 4px solid #f44c89;padding :10px;">Sign in</a>
+                <a routerLink="/userType" >/ Sign up</a>
+              </ul>
+              <form (submit)="login()">
+              <label class="label control-label">E-mail</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+              <label class="label control-label">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+              <button type="submit" class="btn btn-info">SIGN IN</button>
+            
+            </form>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+<br><br><br><br><br><br><br><br><br>
+    
+  
+  

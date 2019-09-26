@@ -1,0 +1,36 @@
+
+<div class="background">
+    <div class="container">
+      <div class="row">   
+        <div class="col-md-6 mt-5 mx-auto">
+                <h1 class="text-center">{{ details?.user_type }} <b>{{ details?.first_name }}</b></h1>
+             
+          <form (submit)="editProf()">
+            <div class="form-group">
+              <label for="name">First name</label>
+              <input type="text" class="form-control" name="first_name" placeholder="Enter your first name" [(ngModel)]="credentials.first_name" >
+    
+              <label for="name">Last name</label>
+              <input type="text" class="form-control" name="last_name" placeholder="Enter your last name" [(ngModel)]="credentials.last_name" >
+    
+              <label for="gender">Gender</label>
+              <select class="form-control" name="gender" [(ngModel)]="credentials.gender" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+    
+              <label for="contact">Contact number</label>
+              <input type="text" class="form-control" name="contact_no" placeholder="07########" [(ngModel)]="credentials.contact_no" >
+            </div>
+
+            <button type="submit" >Confirm</button>
+            <button (click)="CancleEditProfile()">Cancle</button><br><br>
+          
+            
+          </form>
+    
+          
+        </div>
+      </div>
+    </div>
+    </div>

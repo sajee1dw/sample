@@ -1,0 +1,93 @@
+
+<ul>
+    <li><img src="assets/img/logo.png" width="20%"  ></li>
+</ul>
+
+ <ul>
+    <li><a routerLink="/cli_home">&lt;&lt;&lt;</a></li>
+    <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+  <div class="col-md-6 mx-left">
+    <h1 class="text-center">PROFILE</h1>
+  </div>
+  <div class="row">
+      <div class="col-md-2 my-2">
+  <img src="http://localhost:3000/{{ developer?.image.image_name }}" 
+  alt="http://localhost:3000/{{ developer?.image.image_name }}" width="40%" heigt="40%">
+</div>
+<div class="col-md-8">
+  
+  <a (click)="gotoChat()" routerLink="/chatInterface"><img src="../../../assets/img/chat.png" width="5%" heigt="5%" style="margin-left: -5%;margin-top: 5%"></a>
+</div>
+</div>
+
+  <table class="table col-md-6 mx-left">
+    <tr>
+      <td>Fist Name</td>
+      <td>{{ developer?.first_name }}</td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td>{{ developer?.last_name }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ developer?.email }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{ developer?.gender }}</td>
+    </tr>
+    <tr>
+      <td>contact number</td>
+      <td>{{ developer?.contact_no }}</td>
+    </tr>
+  </table>
+
+
+    <div class="col-md-6 mx-left">
+      <h1 class="text-center">Skills</h1>
+    </div>
+    <table class="table col-md-6 mx-left">
+      <tr *ngIf="web">
+        <td>{{ skills?.web_skill }}</td>
+      </tr>
+      <tr *ngIf="design">
+        <td>{{ skills?.design_skill }}</td>
+      </tr>
+      <tr *ngIf="writing">
+        <td>{{ skills?.writing_skill }}</td>
+      </tr>
+      <tr *ngIf="data">
+        <td>{{ skills?.data_skill }}</td>
+      </tr>
+
+    </table>
+    
+
+    <div *ngIf="marked1">
+    <select [(ngModel)]="credentials.project_ID">
+      <option *ngFor="let project of projects" [value]="project.id">
+          {{ project?.project_name }}
+        </option>
+    </select>
+
+    <button (click)="requestDeveloper()">Request</button>
+
+  </div>
+
+  <div *ngIf="marked2">
+    <div *ngFor="let requested_developer of requested_developers">
+    <button (click)="cancleRequest(requested_developer.project.id)">Requested for {{ requested_developer?.project.project_name }}</button>
+  </div>
+    <br><br>
+    <select [(ngModel)]="credentials.project_ID">
+        <option *ngFor="let project of projects" [value]="project.id">
+            {{ project?.project_name }}
+          </option>
+      </select>
+  
+      <button (click)="requestDeveloper()">Request</button>
+  </div>
+

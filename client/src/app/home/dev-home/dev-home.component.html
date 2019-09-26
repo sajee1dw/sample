@@ -1,0 +1,135 @@
+<app-dev-appbar></app-dev-appbar>
+
+<h3><b>Web projects</b></h3>
+
+<div *ngFor="let project of webProject">
+    
+    <div class="col-md-6 mx-left">
+      <img src="http://localhost:3000/{{ project?.user?.image.image_name }}"
+      alt="http://localhost:3000/{{ project?.user?.image.image_name }}" width="10%" heigt="10%">
+      <div (click)="viewProject( project.id, project.client_ID )">Hello</div>
+      <table>
+        <tr>
+          <td>{{ project?.project_name }}</td>
+        </tr>
+        <tr>
+          {{ project?.bid?.maximum_value }}
+        </tr>
+        <tr>
+          <td>@ {{ project?.user.first_name }} {{ project?.user.last_name }}</td>
+        <td><button (click)="viewProject( project.id, project.client_ID )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+
+
+<h3><b>Design projects</b></h3>
+
+<div *ngFor="let project of designProject">
+    
+    <div class="col-md-6 mx-left">
+        <img src="http://localhost:3000/{{ project?.user?.image.image_name }}"
+      alt="http://localhost:3000/{{ project?.user?.image.image_name }}" width="10%" heigt="10%">
+      <table>
+        <tr>
+          <td>{{ project?.project_name }}</td>
+        </tr>
+        <tr>
+          {{ project?.bid?.maximum_value }}
+        </tr>
+        <tr>
+          <td>@ {{ project?.user.first_name }} {{ project?.user.last_name }}</td>
+        <td>
+        <td><button (click)="viewProject( project.id, project.client_ID )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+
+
+<h3><b>Writing projects</b></h3>
+
+<div *ngFor="let project of writingProject">
+    
+    <div class="col-md-6 mx-left">
+        <img src="http://localhost:3000/{{ project?.user?.image.image_name }}"
+      alt="http://localhost:3000/{{ project?.user?.image.image_name }}" width="10%" heigt="10%">
+      <table>
+        <tr>
+          <td>{{ project?.project_name }}</td>
+        </tr>
+        <tr>
+          {{ project?.bid?.maximum_value }}
+        </tr>
+        <tr>
+          <td>@ {{ project?.user.first_name }} {{ project?.user.last_name }}</td>
+        <td>
+        <td><button (click)="viewProject( project.id, project.client_ID )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+
+
+<h3><b>Data projects</b></h3>
+
+<div *ngFor="let project of dataProject">
+    
+    <div class="col-md-6 mx-left">
+        <img src="http://localhost:3000/{{ project?.user?.image.image_name }}"
+      alt="http://localhost:3000/{{ project?.user?.image.image_name }}" width="10%" heigt="10%">
+      <table>
+        <tr>
+          <td>{{ project?.project_name }}</td>
+        </tr>
+        <tr>
+          {{ project?.bid?.maximum_value }}
+        </tr>
+        <tr>
+          <td>@ {{ project?.user.first_name }} {{ project?.user.last_name }}</td>
+        <td>
+        <td><button (click)="viewProject( project.id, project.client_ID )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+
+<h3><b>Other projects</b></h3>
+
+<div *ngFor="let project of otherProject">
+    
+    <div class="col-md-6 mx-left">
+        <img src="http://localhost:3000/{{ project?.user?.image.image_name }}"
+        alt="http://localhost:3000/{{ project?.user?.image.image_name }}" width="10%" heigt="10%">
+      <table>
+        <tr>
+          <td>{{ project?.project_name }}</td>
+        </tr>
+        <tr>
+          {{ project?.bid?.maximum_value }}
+        </tr>
+        <tr>
+          <td>@ {{ project?.user.first_name }} {{ project?.user.last_name }}</td>
+        <td>
+        <td><button (click)="viewProject( project.id, project.client_ID )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+

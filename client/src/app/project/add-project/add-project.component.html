@@ -1,0 +1,50 @@
+<ul>
+    <li><a routerLink="/project">&lt;&lt;&lt;</a></li>
+    <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+
+<div class="background">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <div class="row" style="margin-top: 100px;box-shadow: -1px 1px 25px 10px rgb(77, 47, 47);">
+            <div class="col-md-12">
+              <form (submit)="AddProject()">
+              <label class="label control-label">Project Name</label>
+              <input type="text" class="form-control" name="project_name" placeholder="Enter suitable project name" [(ngModel)]="credentials.project_name">
+              <label class="label control-label">Project Category</label>
+              <select class="form-control" name="project_category" [(ngModel)]="credentials.project_category">
+                <option>Web development,IT & Software Skills</option>
+                <option>Designing , Photo editing and Video editing</option>
+                <option>Content writing</option>
+                <option>Data Entry</option>
+                <option>Other project</option>
+              </select>
+              <label class="label control-label">Project Description</label>
+              <textarea rows="8" cols="50" name="project_description" [(ngModel)]="credentials.project_description"></textarea>
+
+              <a (click)="fixedPrice()" class="btn btn-info">Set fixed price</a>
+              <a (click)="startBid()" class="btn btn-info">Start a bid</a>
+              
+             <div *ngIf="marked1"> <label class="label control-label">Fixed price</label>
+              <input type="text" class="form-control" name="payment" placeholder="Payment for the service" [(ngModel)]="credentials.payment">
+            </div>
+
+            <div *ngIf="marked2">  
+                    <label class="label control-label">Maximum bid value</label>
+                    <input type="text" class="form-control" name="max_value" placeholder="Maximum bid value" [(ngModel)]="credential.maximum_value">
+            </div>
+
+            <button type="submit" class="btn btn-info">Post the project</button>
+
+              <br><br>
+            </form>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>

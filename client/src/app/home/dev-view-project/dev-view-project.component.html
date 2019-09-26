@@ -1,0 +1,107 @@
+
+<ul>
+    <li><img src="assets/img/logo.png" width="20%"  ></li>
+</ul>
+
+   <ul>
+      <li><a routerLink="/dev_home">&lt;&lt;&lt;</a></li>
+      <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+  </ul>
+
+
+
+  <table class="table col-md-6 mx-left">
+      <th>{{ project?.project_name }}</th>
+      <tr>
+        <td>Project Description</td>
+        <td>{{ project?.project_description }}</td>
+      </tr>
+      <tr>
+          <td>Project Category</td>
+          <td>{{ project?.project_category }}</td>
+        </tr>
+
+    <div *ngIf="view1">
+      <tr>
+        <td>Payment</td>
+        <td>{{ project?.payment }}</td>
+      </tr>
+      <br>
+      <div *ngIf="marked3">
+        <button  (click)="sendRequest()">Request</button>
+      </div>
+      <div *ngIf="marked4">
+        <button  (click)="cancleRequest()">Requested</button>
+      </div>
+    </div>
+
+      <div *ngIf="view2" class="col-md-6 mx-left">
+        <table>
+    
+          <th>Bid details</th>
+          <tr>
+            <td>{{ bid?.maximum_value }}</td>
+        </tr>
+        <tr>
+            <td>{{ diff }} Days left</td>
+        </tr>
+        </table>
+
+
+        <div *ngIf="marked1">
+          <br><br>
+          <form (submit)="sendBid()">
+              <label>Enter the bid value:</label>
+              <input type="number" name="bid_value" [(ngModel)]="credentials.bid_value">&nbsp;&nbsp;
+              <button type="submit">Send the bid</button>
+            </form>
+          </div>
+    
+    
+          <div *ngIf="marked2">
+            <br><br>
+            Your bid value: {{ bids?.bid_value }}
+            <form (submit)="bidAgain()">
+                <label>Enter the bid value:</label>
+                <input type="number" name="bid_value" [(ngModel)]="credentials.bid_value">&nbsp;&nbsp;
+                <button type="submit">Bid again</button>
+                <button  (click)="deleteBid()">Delete the bid</button>
+              </form>
+          </div>
+
+    </div>
+  </table>
+
+<div class="row">
+  <div class="col-md-2 my-2">
+  <img src="http://localhost:3000/{{ client?.image.image_name }}"
+      alt="http://localhost:3000/{{ client?.image.image_name }}" width="40%" heigt="40%">
+    </div>
+    <div class="col-md-8">
+      <h6>Ask More Details</h6>
+      <a routerLink="/chat"><img src="../../../assets/img/chat.png" width="5%" heigt="5%" style="margin-left: 5%"></a>
+    </div>
+    </div>
+  <table class="table col-md-6 mx-left">
+      <th>About the client</th>
+      <tr>
+        <td>Fist Name</td>
+        <td>{{ client?.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ client?.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ client?.email }}</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>{{ client?.gender }}</td>
+      </tr>
+      <tr>
+        <td>contact number</td>
+        <td>{{ client?.contact_no }}</td>
+      </tr>
+    </table>

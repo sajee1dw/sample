@@ -1,0 +1,79 @@
+
+<app-dev-appbar></app-dev-appbar>
+
+<div class="col-md-6 mx-auto">
+<form  (submit)="Upload()" method="POST">
+  <img src="{{ fileUrl?.fileUrl }}" alt="{{ fileUrl?.fileUrl }}" width="20%" height="20%"><br> 
+  <input type="file" name="profile_image" accept="image/*" (change)="onFileSelected($event)">
+  <button type="submit" >Upload</button>
+</form>
+</div>
+
+
+<br><div *ngIf="marked1">
+    <div class="col-md-6 mx-auto">
+      <h1 class="text-center">PROFILE</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tr>
+        <td>Fist Name</td>
+        <td>{{ details?.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ details?.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ details?.email }}</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>{{ details?.gender }}</td>
+      </tr>
+      <tr>
+        <td>contact number</td>
+        <td>{{ details?.contact_no }}</td>
+      </tr>
+    </table>
+
+    <div style="text-align: center"><button (click)="showEditProf()" class="btn btn-lg btn-primary">Edit public details</button></div>
+
+</div>
+
+<app-dev-edit-profile *ngIf="marked2"></app-dev-edit-profile>
+
+<br><br>
+
+<div *ngIf="marked3">
+    <div class="col-md-6 mx-auto">
+      <h1 class="text-center">Skills</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tr *ngIf="web">
+        <td>Web development,IT & Software Skills</td>
+        <td>{{ skills?.web_skill }}</td>
+      </tr>
+      <tr *ngIf="design">
+        <td>Designing , Photo editing and Video editing</td>
+        <td>{{ skills?.design_skill }}</td>
+      </tr>
+      <tr *ngIf="writing">
+        <td>Content writing</td>
+        <td>{{ skills?.writing_skill }}</td>
+      </tr>
+      <tr *ngIf="data">
+        <td>Data Entry</td>
+        <td>{{ skills?.data_skill }}</td>
+      </tr>
+      <tr *ngIf="other">
+        <td>Other skills</td>
+        <td>{{ skills?.other_skill }}</td>
+      </tr>
+    </table>
+
+    <div style="text-align: center"><button (click)="showEditSkill()" class="btn btn-lg btn-primary">Edit skills</button></div>
+
+</div>
+
+<app-edit-skill *ngIf="marked4"></app-edit-skill>

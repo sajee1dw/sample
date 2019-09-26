@@ -1,0 +1,57 @@
+<p>usersName : {{userName}} {{userId}}</p>
+
+<p *ngIf="uuStatus"><span *ngIf="s"> online</span><span *ngIf="!s"> offline</span></p>
+<div class="msg_history">
+  <div *ngIf="cRef">
+
+    <div *ngFor="let mh of msgHistory">
+      <div class="incoming_msg">
+        <div *ngIf="mh.from_id !== userId">
+          <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p> from:{{mh.from_id}} to :{{mh.yo_id}} message :{{mh.message}}</p>
+              <span class="time_date"> 11:01 AM | June 9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="outgoing_msg">
+
+        <div class="sent_msg" *ngIf="mh.from_id === userId">
+          <p> from:{{mh.from_id}} to :{{mh.yo_id}} message :{{mh.message}}</p>
+          <span class="time_date"> 11:01 AM | June 9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="outgoing_msg" *ngFor="let cm of CuSeMsg">
+
+      <div class="sent_msg">
+        <p> message :{{cm}}</p>
+        <span class="time_date"> 11:01 AM | June 9</span>
+      </div>
+    </div>
+
+    <div class="incoming_msg" *ngFor="let ml of msgList">
+
+      <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+      <div class="received_msg">
+        <div class="received_withd_msg">
+          <p>{{ml.BEname}} is saying: {{ml.BEmsg}} </p>
+          <span class="time_date"> 11:01 AM | June 9</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="type_msg">
+      <div class="input_msg_write">
+        <input type="text" class="write_msg" placeholder="Type a message" [(ngModel)]="msg" />
+        <button class="msg_send_btn" type="button" (click)="sendMessage()"><i class="fa fa-paper-plane-o"
+            aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+</div>

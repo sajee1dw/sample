@@ -1,0 +1,26 @@
+
+<app-cli-appbar></app-cli-appbar>
+
+<div style="text-align: center"><button  routerLink="/project/addProject" class="btn btn-lg btn-primary">Add a new project</button></div>
+
+<br><br>
+
+<div class="col-md-6 mx-auto">
+    <h1 class="text-center">Current projects</h1>
+  </div>
+  <br><br>
+<div *ngFor="let project of projects">
+    
+    <div class="col-md-6 mx-auto">
+      <table>
+        <tr>
+          <td><b>{{ project?.project_name }}</b></td>
+        <td><button (click)="onClick( project.id )">
+          View more
+        </button></td>
+      </tr>
+      </table><br><br>
+    </div>
+    
+</div>
+

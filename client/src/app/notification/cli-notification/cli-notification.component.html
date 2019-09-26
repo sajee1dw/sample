@@ -1,0 +1,82 @@
+<ul>
+    <li><img src="assets/img/logo.png" width="20%"  ></li>
+</ul>
+
+<ul>
+    <li><a routerLink="/cli_home">&lt;&lt;&lt;</a></li>
+    <li  style="float:right"><a class="active" (click)="logout()">Log Out</a></li>
+</ul>
+
+
+<div *ngIf="marked1"><h3><b>New</b></h3><br>
+
+<div *ngFor="let reqNot of requestNotificationNew">
+  <button (click)="viewProjectRequest(reqNot.id)">
+  <h4><b>Request for a project</b></h4>
+  <img src="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Project Name: {{ reqNot?.project.project_name }}<br>
+  Request By : {{ reqNot?.user.first_name}} {{ reqNot?.user.last_name}}<br><br>
+  </button>
+</div>
+
+<div *ngFor="let bidNot of bidNotificationNew">
+    <button (click)="viewBidResponse(bidNot.id)">
+    <h4><b>Request for a bid</b></h4>
+    <img src="http://localhost:3000/{{ bidNot?.user?.image.image_name }}" 
+    alt="http://localhost:3000/{{ bidNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+    Project Name: {{ bidNot?.project.project_name }}<br>
+    Request By : {{ bidNot?.user.first_name}} {{ bidNot?.user.last_name}}<br>
+    Bid value: {{ bidNot?.bid_value }}<br><br>
+  </button>
+</div>
+
+
+<div *ngFor="let devNot of developerAcceptNew">
+  <button (click)="viewDevAccept(devNot.id)">
+  <h4><b>Accept request</b></h4>
+  <img src="http://localhost:3000/{{ devNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ devNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Project Name: {{ devNot?.project.project_name }}<br>
+  Accepted By : {{ devNot?.user.first_name}} {{ devNot?.user.last_name}}<br>
+</button>
+</div>
+
+</div>
+
+
+<br><br>
+<div *ngIf="marked2"><h3><b>Earlier</b></h3><br>
+
+<div *ngFor="let reqNot of requestNotificationOld">
+  <button (click)="viewProjectRequest(reqNot.id)">
+  <h4><b>Request for a project</b></h4>
+  <img src="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ reqNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Project Name: {{ reqNot?.project.project_name }}<br>
+  Request By : {{ reqNot?.user.first_name}} {{ reqNot?.user.last_name}}<br><br>
+  </button>
+</div>
+
+<div *ngFor="let bidNot of bidNotificationOld">
+    <button (click)="viewBidResponse(bidNot.id)">
+    <h4><b>Request for a bid</b></h4>
+    <img src="http://localhost:3000/{{ bidNot?.user?.image.image_name }}" 
+    alt="http://localhost:3000/{{ bidNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+    Project Name: {{ bidNot?.project.project_name }}<br>
+    Request By : {{ bidNot?.user.first_name}} {{ bidNot?.user.last_name}}<br>
+    Bid value: {{ bidNot?.bid_value }}<br><br>
+  </button>
+</div>
+
+<div *ngFor="let devNot of developerAcceptOld">
+  <button (click)="viewDevAccept(devNot.id)">
+  <h4><b>Accept request</b></h4>
+  <img src="http://localhost:3000/{{ devNot?.user?.image.image_name }}" 
+  alt="http://localhost:3000/{{ devNot?.user?.image.image_name }}" width="10%" heigt="10%"><br>
+  Project Name: {{ devNot?.project.project_name }}<br>
+  Accepted By : {{ devNot?.user.first_name}} {{ devNot?.user.last_name}}<br>
+</button>
+</div>
+
+</div>
